@@ -39,5 +39,14 @@ public class TaskRepositoryTest {
         entityManager.flush();
     }
 
+    // Test method to check if Tasks can be saved and loaded
+    @Test
+    public void testSaveAndLoadTask() {
+        Task task = taskRepository.findById(task1.getId()).get();
+        assertThat(task).isEqualTo(task1);
+    }
+
+
+
 
 }
