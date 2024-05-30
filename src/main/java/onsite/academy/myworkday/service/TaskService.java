@@ -2,10 +2,8 @@ package onsite.academy.myworkday.service;
 
 import onsite.academy.myworkday.model.Task;
 import onsite.academy.myworkday.repository.TaskRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -31,7 +29,7 @@ public class TaskService {
         if (optionalTask.isPresent()) {
             Task existingTask = optionalTask.get();
             existingTask.setDescription(task.getDescription());
-            existingTask.setEffort(task.getEffort());
+            existingTask.setMaxEffortHrs(task.getMaxEffortHrs());
             existingTask.setIsCompleted(task.getIsCompleted());
             return taskRepository.save(existingTask);
         }

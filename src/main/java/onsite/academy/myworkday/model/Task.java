@@ -12,13 +12,13 @@ public class Task {
     private Boolean isCompleted;
 
     @Enumerated(EnumType.ORDINAL)
-    private Effort effort;
+    private Effort maxEffortHrs;
 
     public Task(Long id, String description, Boolean isCompleted, Effort effort) {
         this.id = id;
         this.description = description;
         this.isCompleted = isCompleted;
-        this.effort = effort;
+        this.maxEffortHrs = effort;
     }
 
     public Task() {
@@ -50,12 +50,12 @@ public class Task {
         this.isCompleted = isCompleted;
     }
 
-    public Effort getEffort() {
-        return effort;
+    public Effort getMaxEffortHrs() {
+        return maxEffortHrs;
     }
 
-    public void setEffort(Effort effort) {
-        this.effort = effort;
+    public void setMaxEffortHrs(Effort effort) {
+        this.maxEffortHrs = effort;
     }
 
     // toString
@@ -65,7 +65,7 @@ public class Task {
                 "id=" + id +
                 ", description='" + description + '\'' +
                 ", isCompleted=" + isCompleted +
-                ", effort=" + effort +
+                ", effort=" + maxEffortHrs +
                 '}';
     }
 
@@ -80,7 +80,7 @@ public class Task {
         if (id != null ? !id.equals(task.id) : task.id != null) return false;
         if (description != null ? !description.equals(task.description) : task.description != null) return false;
         if (isCompleted != null ? !isCompleted.equals(task.isCompleted) : task.isCompleted != null) return false;
-        return effort == task.effort;
+        return maxEffortHrs == task.maxEffortHrs;
     }
 
 }
